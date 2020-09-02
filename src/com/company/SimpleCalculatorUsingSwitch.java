@@ -45,7 +45,7 @@ public class SimpleCalculatorUsingSwitch {
                 System.out.println(a*a);
                 break;
             default:
-                System.out.println("Невірно введена операція");
+                System.out.println("Невірно введена операція!");
                 break;
         }
 
