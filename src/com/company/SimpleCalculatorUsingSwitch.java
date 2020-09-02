@@ -40,6 +40,10 @@ public class SimpleCalculatorUsingSwitch {
                 b = scanner.nextInt();
                 System.out.println(a * b / 100);
                 break;
+            case "квадрат числа":
+                a = scanner.nextInt();
+                System.out.println(a*a);
+                break;
             default:
                 System.out.println("Невірно введена операція");
                 break;
