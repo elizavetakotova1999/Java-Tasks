@@ -1,4 +1,4 @@
-package com.company;
+package com.mytasks;
 
 import java.util.Scanner;
 
@@ -42,7 +42,11 @@ public class SimpleCalculatorUsingSwitch {
                 break;
             case "квадрат числа":
                 a = scanner.nextInt();
-                System.out.println(a*a);
+                System.out.println(a * a);
+                break;
+            case "корінь числа":
+                a = scanner.nextInt();
+                System.out.println(Math.sqrt(a));
                 break;
             default:
                 System.out.println("Невірно введена операція!");
