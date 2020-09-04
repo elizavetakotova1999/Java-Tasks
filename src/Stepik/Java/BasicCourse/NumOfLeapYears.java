@@ -1,4 +1,4 @@
-package Stepik.Java.BasicCource;
+package Stepik.Java.BasicCourse;
 
 /*
 В Григорианском календаре год является високосным в двух случаях: либо он кратен 4, но при этом не кратен 100,

@@ -1,4 +1,4 @@
-package Stepik.Java.BasicCource;
+package Stepik.Java.BasicCourse;
 
 /*Реализуйте метод, возвращающий true, если среди четырех его аргументов ровно два истинны (любые).
 Во всех остальных случаях метод должен возвращать false.*/
