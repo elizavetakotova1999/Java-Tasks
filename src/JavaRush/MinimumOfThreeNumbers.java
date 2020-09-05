@@ -18,11 +18,10 @@ package JavaRush;
 public class MinimumOfThreeNumbers {
     public static int min(int a, int b, int c) {
         int d = Math.min(a, b);
-        int minimum = Math.min(d, c);
-        return minimum;
+        return Math.min(d, c);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         System.out.println(min(1, 2, 3));
         System.out.println(min(-1, -2, -3));
         System.out.println(min(3, 5, 3));
