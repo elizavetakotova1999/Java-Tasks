@@ -14,6 +14,7 @@ package JavaRush;
 */
 public class CatObjectsAndVariables {
     public static void main(String[] args) {
+        //обьекты
         Cat cat1 = new Cat();
         Cat cat2 = new Cat();
         Cat cat3 = new Cat();
@@ -22,6 +23,7 @@ public class CatObjectsAndVariables {
         Cat cat6 = new Cat();
         Cat cat7 = new Cat();
         Cat cat8 = new Cat();
+        //переменные
         Cat cat9;
         Cat cat10;
 
