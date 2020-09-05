@@ -20,16 +20,14 @@ package JavaRush;
 */
 public class MinimumOfFourNumbers {
     public static int min(int a, int b, int c, int d) {
-        int minimum = min(Math.min(a, b), Math.min(c, d));
-        return minimum;
+        return min(Math.min(a, b), Math.min(c, d));
     }
 
     public static int min(int a, int b) {
-        int minimum = Math.min(a, b);
-        return minimum;
+        return Math.min(a, b);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         System.out.println(min(-20, -10));
         System.out.println(min(-40, -10, -30, 40));
         System.out.println(min(-20, -40, -30, 40));
