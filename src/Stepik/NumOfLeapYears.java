@@ -1,4 +1,4 @@
-package Stepik.Java.BasicCourse;
+package Stepik;
 
 /*
 В Григорианском календаре год является високосным в двух случаях: либо он кратен 4, но при этом не кратен 100,
@@ -14,7 +14,6 @@ public class NumOfLeapYears {
     public static int leapYearCount(int year) {
 
         return (year / 4) - (year / 100) + (year / 400);
-
     }
 
 }

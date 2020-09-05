@@ -1,4 +1,4 @@
-package Stepik.Java.BasicCourse;
+package Stepik;
 
 //Реализуйте метод flipBit, изменяющий значение одного бита заданного целого числа на противоположное.
 
