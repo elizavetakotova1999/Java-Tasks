@@ -1,5 +1,3 @@
 # Java-Tasks
-Курс Java Rush:
-https://javarush.ru/users/1400908</br>
-Курс Stepik:
-https://stepik.org/users/293106747
+<a href="https://javarush.ru/users/1400908">Курс Java Rush</a></br>
+<a href="https://stepik.org/users/293106747">Курс Stepik</a></br>
