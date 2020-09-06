@@ -2,15 +2,11 @@ package Stepik;
 
 public class IsTheNumberAPowerOfTwo {
     public static void main(String[] args) {
-        System.out.println(isPowerOfTwo(0));
+        System.out.println(isPowerOfTwo(1));
     }
 
     public static boolean isPowerOfTwo(int value) {
-        Integer n = Integer.bitCount(value);
-//        if(Math.abs(n & (n - 1)) == 0)
-//            return true;
-//        else
-//            return false;
-
+        int n = Integer.bitCount(Math.abs(value));
+        return (n == 1);
     }
 }
