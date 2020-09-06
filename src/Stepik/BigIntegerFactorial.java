@@ -1,4 +1,5 @@
-package JavaRush;
+package Stepik;
+
 import java.math.BigInteger;
 
 /*Реализуйте метод, вычисляющий факториал заданного натурального числа.
@@ -10,6 +11,7 @@ public class BigIntegerFactorial {
     public static void main(String[] args) {
         System.out.println(factorial(456));
     }
+
     public static BigInteger factorial(int value) {
         return value <= 0 ? BigInteger.ONE : BigInteger.valueOf(value).multiply(factorial(value - 1));
     }
