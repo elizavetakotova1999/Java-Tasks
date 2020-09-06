@@ -1,5 +1,3 @@
-# Project exclude paths
-/out/
 # file: ~/.gitignore_global
      .DS_Store
      .idea
