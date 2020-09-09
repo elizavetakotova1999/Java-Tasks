@@ -17,8 +17,8 @@ return 123 * 435;
 */
 
 public class SimplePersent {
-    public static double addTenPercent(int i) {
-        return i * 1.1;
+    public static double addTenPercent(int percent) {
+        return percent * 1.1;
     }
 
     public static void main(String[] args) {
