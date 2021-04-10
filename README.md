@@ -9,5 +9,5 @@
 </ul>
 <h1>Books</h1>
 <ul>
-<li><a https://careers.epam.by/content/dam/epam/by/book_epam_by/Java.Programming.pdf">Java. Промышленное программирование</a></li>
+<li><a href="https://stepik.org/users/293106747">...</a></li>
 </ul>
