@@ -9,5 +9,6 @@
 </ul>
 <h1>Books</h1>
 <ul>
-<li><a href="https://stepik.org/users/293106747">...</a></li>
+<li><a href="https://proglib.io/p/java-books">6 книг по Java для программистов любого уровня</a></li>
+<li><a href="https://proglib.io/p/5-books-enterprise-java-developer/">5 книг для Enterprise Java разработчика</a></li>
 </ul>
