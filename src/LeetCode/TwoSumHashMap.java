@@ -24,13 +24,11 @@ public class TwoSumHashMap {
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i],i);
         }
+
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[j] == target - nums[i]) {
-                    return new int[]{i, j};
-                }
-            }
-        }
+            int k = target-nums[i];
+         }
+
         throw new IllegalArgumentException("No two sum solution");
     }
 }
