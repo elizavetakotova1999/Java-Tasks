@@ -28,6 +28,6 @@ public class TwoSumHashMap {
                 }
             }
         }
-        return nums;
+        throw new IllegalArgumentException("No two sum solution");
     }
 }

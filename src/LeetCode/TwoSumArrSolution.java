@@ -40,6 +40,6 @@ public class TwoSumArrSolution {
                 }
             }
         }
-        return nums;
+        throw new IllegalArgumentException("No two sum solution");
     }
 }
