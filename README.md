@@ -2,8 +2,10 @@
 <ul>
   <li><a href="https://javarush.ru/users/1400908">Курс Java Rush</a></li>
   <li><a href="https://stepik.org/users/293106747">Курс Stepik</a></li>
+  <li><a href="https://leetcode.com">LeetCode</a></li>
   <li><a href="https://">Pet projects</a></li>
    <li><a href="https://">Data Structure And Algorithms</a></li> 
+  
   </ul>
 <h1>Useful links</h1>
 <ul>
