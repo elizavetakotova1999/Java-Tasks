@@ -14,12 +14,12 @@ public class TwoSumHashMap {
             arr[i] = sc.nextInt();
         }
         int t = sc.nextInt();
-        TwoSumArrSolution twoNumbers = new TwoSumArrSolution();
-        twoNumbers.twoNum(arr, t);
-        System.out.println(Arrays.toString(twoNumbers.twoNum(arr, t)));
+        TwoSumHashMap twoSum = new TwoSumHashMap();
+        twoSum.twoSumHashMap(arr, t);
+        System.out.println(Arrays.toString(twoSum.twoSumHashMap(arr, t)));
     }
 
-    public int[] twoNum(int[] nums, int target) {
+    public int[] twoSumHashMap(int[] nums, int target) {//Two-pass Hash Table(двухпроходная хеш-таблица)
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], i);
@@ -31,14 +31,30 @@ public class TwoSumHashMap {
                 return new int[]{i, map.get(k)};
             }
         }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+    /*
+      Анализ сложности:
+      Сложность по времени: O(n). Мы просматриваем список, содержащий nn элементов, ровно дважды.
+      Поскольку хеш-таблица сокращает время поиска до O(1), временная сложность составляет O(n).
+      Сложность пространства: O(n). Требуемое дополнительное пространство зависит от количества элементов,
+      хранящихся в хэш-таблице, в которой хранится ровно n элементов.*/
 
+    public int[] twoSumOnePassHashMap(int[] nums, int target) { //One-pass Hash Table(однопроходная хеш-таблица)
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
         throw new IllegalArgumentException("No two sum solution");
     }
 }
-        /*
+    /*
         Анализ сложности:
-        Сложность по времени: O(n). Мы просматриваем список, содержащий nn элементов, ровно дважды.
-        Поскольку хеш-таблица сокращает время поиска до O(1), временная сложность составляет O(n).
-
-        Сложность пространства: O(n). Требуемое дополнительное пространство зависит от количества элементов,
-        хранящихся в хэш-таблице, в которой хранится ровно n элементов.*/
+        Сложность по времени: O (n) O (n). Мы просматриваем список, содержащий nn элементов, только один раз.
+        Каждый поиск в таблице стоит только O (1) O (1) раз.
+        Сложность пространства: O (n) O (n). Требуемое дополнительное пространство зависит от количества элементов,
+        хранящихся в хэш-таблице, в которой хранится не более nn элементов.*/
