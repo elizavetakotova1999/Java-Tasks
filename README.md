@@ -10,6 +10,8 @@
 <h1>Useful links</h1>
 <ul>
 <li><a href="https://proglib.io/p/java-code/">Пишем элегантный и чистый Java код в 5 этапов</a></li>
+ <li><a href="https://tproger.ru/articles/computational-complexity-explained/">Оценка сложности алгоритмов, или Что такое О(log n)</a></li>
+  https://www.bigocheatsheet.com
 </ul>
 <h1>Youtube Java tutorials</h1>
 <ul>
