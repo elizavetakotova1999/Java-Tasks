@@ -8,12 +8,15 @@ public class ReverseInteger {
         System.out.println(reverseInteger.reverse(564));
     }
     public int reverse(int x) {
-        int a = x/100;//1
-        int b = x/10%10;//2
-        int c = x%10;//3
+        if(x!=0) {
+            int a = x / 100;//1
+            int b = x / 10 % 10;//2
+            int c = x % 10;//3
+             String s = c+""+b+""+a;
+             return Integer.parseInt(s);
+        }else return 0;
 
-        String s = c+""+b+""+a;
-        return Integer.parseInt(s);
+
     }
 }
 
