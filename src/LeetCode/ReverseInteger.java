@@ -5,14 +5,15 @@ package LeetCode;
 public class ReverseInteger {
     public static void main(String[] args) {
         ReverseInteger reverseInteger = new ReverseInteger();
-        reverseInteger.reverse(123);
+        System.out.println(reverseInteger.reverse(564));
     }
-    public void reverse(int x) {
+    public int reverse(int x) {
         int a = x/100;//1
         int b = x/10%10;//2
         int c = x%10;//3
 
-        System.out.println(c+""+b+""+a);
+        String s = c+""+b+""+a;
+        return Integer.parseInt(s);
     }
 }
 
