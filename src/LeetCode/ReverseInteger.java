@@ -14,7 +14,7 @@ public class ReverseInteger {
             int c = x % 10;//3
              String s = c+""+b+""+a;
              return Integer.parseInt(s);
-        }else return 0;
+        }else return 0;//
 
 
     }
