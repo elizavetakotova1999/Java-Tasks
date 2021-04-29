@@ -2,7 +2,7 @@ package MyTasks;
 
 import java.util.Scanner;
 
-public class SimpleCalculatorUsingSwitch {
+public class SwitchCaseBreakDefault {
 
     public static void main(String[] args) {
         System.out.println("Калькулятор");
