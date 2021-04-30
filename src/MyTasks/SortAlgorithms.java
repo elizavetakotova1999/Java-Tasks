@@ -111,4 +111,77 @@ public class SortAlgorithms {
         }
     }
 
+    static void heapify(int[] array, int length, int i) {//Пирамидальная сортировка -O(nlog n)
+        int leftChild = 2*i+1;
+        int rightChild = 2*i+2;
+        int largest = i;
+
+        // если левый дочерний больше родительского
+        if (leftChild < length && array[leftChild] > array[largest]) {
+            largest = leftChild;
+        }
+
+        // если правый дочерний больше родительского
+        if (rightChild < length && array[rightChild] > array[largest]) {
+            largest = rightChild;
+        }
+
+        // если должна произойти замена
+        if (largest != i) {
+            int temp = array[i];
+            array[i] = array[largest];
+            array[largest] = temp;
+            heapify(array, length, largest);
+        }
+    }
+
+    public static void heapSort(int[] array) {
+        if (array.length == 0) return;
+
+        // Строим кучу
+        int length = array.length;
+        // проходим от первого без ответвлений к корню
+        for (int i = length / 2-1; i >= 0; i--)
+            heapify(array, length, i);
+
+        for (int i = length-1; i >= 0; i--) {
+            int temp = array[0];
+            array[0] = array[i];
+            array[i] = temp;
+
+            heapify(array, i, 0);
+        }
+    }
+
+
+    static int partition(int[] array, int begin, int end) {
+        //Быстрая сортировка - O(n^2)
+        // но при этом у алгоритма очень хорошее среднее время запуска,
+        // также равное O(nlog n), он эффективен для больших потоков ввода.
+
+        int pivot = end;
+
+        int counter = begin;
+        for (int i = begin; i < end; i++) {
+            if (array[i] < array[pivot]) {
+                int temp = array[counter];
+                array[counter] = array[i];
+                array[i] = temp;
+                counter++;
+            }
+        }
+        int temp = array[pivot];
+        array[pivot] = array[counter];
+        array[counter] = temp;
+
+        return counter;
+    }
+
+    public static void quickSort(int[] array, int begin, int end) {
+        if (end <= begin) return;
+        int pivot = partition(array, begin, end);
+        quickSort(array, begin, pivot-1);
+        quickSort(array, pivot+1, end);
+    }
+
 }
