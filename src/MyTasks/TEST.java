@@ -4,15 +4,11 @@ import java.util.Arrays;
 
 public class TEST {
     public static void main(String[] args) {
-        for (int i = 0; i < ; i++) {
-        Math.abs();
-            Arrays.toString()
 
-        }
 
     }
-
 }
+/*
 //class
 //__________________________________________________________________________________
 //ключевые слова
@@ -63,4 +59,4 @@ throws throws throws throws throws throws throws throws throws throws throws thr
 //try try try try try try try try try try try try try try try try try try try try try try try try try try try try try try try try try
 void void void void void void void void void void void void void void void void void void void void void void void void void void void void void vodi
 //volatile volatile volatile volatile volatile volatile volatile volatile volatile volatile volatile volatile volatile volatile volatile volatile
-while while while while while while while while while while
+while while while while while while while while while while*/
