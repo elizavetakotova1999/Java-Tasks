@@ -8,32 +8,41 @@ import java.util.stream.Collectors;
 public class SearchAlgorithms {
     public static void main(String[] args) {
         // 1)Линейный поиск
-        int index = linearSearch(new int[]{89, 57, 91, 47, 95, 3, 27, 22, 67, 99}, 67);
+        int index = linearSearch(new int[]{89, 57, 91, 47, 3, 27, 22, 67, 99}, 67);
         System.out.println("Линейный поиск:");
         print(67, index);
         // 2)Двоичный поиск
-        int index2 = binarySearch(new int[]{89, 57, 91, 47, 95, 3, 27, 22, 67, 99}, 67);
+        int index2 = binarySearch(new int[]{89, 57, 91, 47, 27, 22, 67, 99}, 67);
         System.out.println("Двоичный поиск:");
         print(67, index2);
 
         // 3)КМП
         String pattern = "AAABAAA";
-        String text = "ASBNSAAAAAABAAAAABAAAAAGAHUHDJKDDKSHAAJF";
+       String text = "ASBNSAAAAAABAAAAABAAAAAGAHUHDJKDDKSHAAJF";
 
         List<Integer> foundIndexes = SearchAlgorithms.performKMPSearch(text, pattern);
 
+        System.out.println("КМП:");
+
+        if (foundIndexes.isEmpty()) {
+            System.out.println("Pattern not found in the given text String");
+        } else {
+            System.out.println("Pattern found in the given text String at positions :"
+                    + foundIndexes.stream().map(Object::toString).collect(Collectors.joining(", ")));
+        }
+
         // 4)Поиск прыжками
-        int index3 = jumpSearch(new int[]{3, 22, 27, 47, 57, 67, 89, 91, 95, 99}, 67);
+        int index3 = jumpSearch(new int[]{3, 27, 47, 57, 67, 89, 91, 95, 99}, 67);
         System.out.println("Поиск прыжками:");
         print(67, index3);
 
         // 5)Интерполяционный поиск
-        int index4 = interpolationSearch(new int[]{1, 12, 23, 44, 45, 67, 87, 98}, 67);
+        int index4 = interpolationSearch(new int[]{23, 44, 45, 67, 87, 98}, 67);
         System.out.println("Интерполяционный поиск:");
         print(67, index4);
 
         // 6)Экспоненциальный поиск
-        int index5 = exponentialSearch(new int[]{3, 22, 27, 47, 57, 67, 89, 91, 95, 99}, 67);
+        int index5 = exponentialSearch(new int[]{3, 22, 27, 47, 67, 89, 91, 95, 99}, 67);
         System.out.println("Экспоненциальный поиск:");
         print(67, index5);
 
