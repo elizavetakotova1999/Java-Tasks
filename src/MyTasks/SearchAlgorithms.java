@@ -17,13 +17,10 @@ public class SearchAlgorithms {
         print(67, index2);
 
         // 3)КМП
-        String pattern = "AAABAAA";
-       String text = "ASBNSAAAAAABAAAAABAAAAAGAHUHDJKDDKSHAAJF";
-
-        List<Integer> foundIndexes = SearchAlgorithms.performKMPSearch(text, pattern);
-
+        String pattern = "to";
+        String text = "do you mind going to coffee today?";
         System.out.println("КМП:");
-
+        List<Integer> foundIndexes = SearchAlgorithms.performKMPSearch(text, pattern);
         if (foundIndexes.isEmpty()) {
             System.out.println("Pattern not found in the given text String");
         } else {
