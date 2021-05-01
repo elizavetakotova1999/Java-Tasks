@@ -7,30 +7,44 @@ import java.util.stream.Collectors;
 
 public class SearchAlgorithms {
     public static void main(String[] args) {
-        //Линейный поиск
+        // 1)Линейный поиск
         int index = linearSearch(new int[]{89, 57, 91, 47, 95, 3, 27, 22, 67, 99}, 67);
+        System.out.println("Линейный поиск:");
         print(67, index);
-        //Двоичный поиск
+        // 2)Двоичный поиск
         int index2 = binarySearch(new int[]{89, 57, 91, 47, 95, 3, 27, 22, 67, 99}, 67);
+        System.out.println("Двоичный поиск:");
         print(67, index2);
 
-        //КМП
+        // 3)КМП
         String pattern = "AAABAAA";
         String text = "ASBNSAAAAAABAAAAABAAAAAGAHUHDJKDDKSHAAJF";
 
         List<Integer> foundIndexes = SearchAlgorithms.performKMPSearch(text, pattern);
 
-        //Поиск прыжками
+        // 4)Поиск прыжками
         int index3 = jumpSearch(new int[]{3, 22, 27, 47, 57, 67, 89, 91, 95, 99}, 67);
+        System.out.println("Поиск прыжками:");
         print(67, index3);
 
+        // 5)Интерполяционный поиск
+        int index4 = interpolationSearch(new int[]{1, 12, 23, 44, 45, 67, 87, 98}, 67);
+        System.out.println("Интерполяционный поиск:");
+        print(67, index4);
+
+        // 6)Экспоненциальный поиск
+        int index5 = exponentialSearch(new int[]{3, 22, 27, 47, 57, 67, 89, 91, 95, 99}, 67);
+        System.out.println("Экспоненциальный поиск:");
+        print(67, index5);
+
     }
+
     //Линейный поиск - Временная сложность - O(N).пространственная сложность - O(1)
     //редко используется из-за своей неэффективности
     //Линейный поиск можно использовать для малого, несортированного набора данных, который не увеличивается в размерах.
     public static int linearSearch(int array[], int elementToSearch) {
-        for (int i = 0; i <array.length; i++) {
-            if(array[i] == elementToSearch) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == elementToSearch) {
                 return i;
             }
         }
@@ -38,9 +52,9 @@ public class SearchAlgorithms {
     }
 
     public static void print(int elementToSearch, int index) {
-        if(index == -1){
+        if (index == -1) {
             System.out.println(elementToSearch + " not found.");
-        }else {
+        } else {
             System.out.println(elementToSearch + " found at index: " + index);
         }
     }
@@ -54,7 +68,7 @@ public class SearchAlgorithms {
         int lastIndex = arr.length - 1;
 
         // условие прекращения (элемент не представлен)
-        while(firstIndex <= lastIndex) {
+        while (firstIndex <= lastIndex) {
             int middleIndex = (firstIndex + lastIndex) / 2;
             // если средний элемент - целевой элемент, вернуть его индекс
             if (arr[middleIndex] == elementToSearch) {
@@ -119,9 +133,7 @@ public class SearchAlgorithms {
             if (patternIndex == pattern.length()) {
                 foundIndexes.add(textIndex - patternIndex);
                 patternIndex = compliedPatternArray[patternIndex - 1];
-            }
-
-            else if (textIndex < text.length() && pattern.charAt(patternIndex) != text.charAt(textIndex)) {
+            } else if (textIndex < text.length() && pattern.charAt(patternIndex) != text.charAt(textIndex)) {
                 if (patternIndex != 0)
                     patternIndex = compliedPatternArray[patternIndex - 1];
                 else
@@ -169,7 +181,7 @@ public class SearchAlgorithms {
 
         while (integers[Math.min(jumpStep, arrayLength) - 1] < elementToSearch) {
             previousStep = jumpStep;
-            jumpStep += (int)(Math.sqrt(arrayLength));
+            jumpStep += (int) (Math.sqrt(arrayLength));
             if (previousStep >= arrayLength)
                 return -1;
         }
@@ -187,6 +199,8 @@ public class SearchAlgorithms {
     //Интерполяционный поиск
     //Интерполяционный поиск используется для поиска элементов в отсортированном массиве. Он полезен для равномерно распределенных в структуре данных.
     //Эффективнее применять эту формулу для больших массивов. В противном случае алгоритм работает как линейный поиск.
+    //Временная сложность -  O(log log N)/O(N).Пространственная сложность - O(1).
+    //Алгоритм полезно применять для равномерно распределенных данных вроде телефонной книги.
     public static int interpolationSearch(int[] integers, int elementToSearch) {
 
         int startIndex = 0;
@@ -195,8 +209,8 @@ public class SearchAlgorithms {
         while ((startIndex <= lastIndex) && (elementToSearch >= integers[startIndex]) &&
                 (elementToSearch <= integers[lastIndex])) {
             // используем формулу интерполяции для поиска возможной лучшей позиции для существующего элемента
-            int pos = startIndex + (((lastIndex-startIndex) /
-                    (integers[lastIndex]-integers[startIndex]))*
+            int pos = startIndex + (((lastIndex - startIndex) /
+                    (integers[lastIndex] - integers[startIndex])) *
                     (elementToSearch - integers[startIndex]));
 
             if (integers[pos] == elementToSearch)
@@ -210,4 +224,27 @@ public class SearchAlgorithms {
         }
         return -1;
     }
+
+    //Экспоненциальный поиск
+    //Используется для поиска элементов путём перехода в экспоненциальные позиции, то есть во вторую степень.
+    //В этом поиске мы пытаемся найти сравнительно меньший диапазон и применяем на нем двоичный алгоритм для поиска элемента.
+    //Для работы алгоритма коллекция должна быть отсортирована.
+    //Временная сложность - O(log (N)).Пространственная сложность - O(1). Для рекурсивного двоичного поиска пространственная сложность становится равной O(log (N)).
+    //Экспоненциальный поиск используется с большими массивами, когда бинарный поиск затратен. Экспоненциальный поиск разделяет данные на более доступные для поиска разделы.
+    public static int exponentialSearch(int[] integers, int elementToSearch) {
+
+        if (integers[0] == elementToSearch)
+            return 0;
+        if (integers[integers.length - 1] == elementToSearch)
+            return integers.length;
+
+        int range = 1;
+
+        while (range < integers.length && integers[range] <= elementToSearch) {
+            range = range * 2;
+        }
+
+        return Arrays.binarySearch(integers, range / 2, Math.min(range, integers.length), elementToSearch);
+    }
+
 }
