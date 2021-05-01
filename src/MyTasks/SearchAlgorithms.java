@@ -25,8 +25,10 @@ public class SearchAlgorithms {
         print(67, index3);
 
     }
-
-    public static int linearSearch(int array[], int elementToSearch) {//Линейный поиск - Временная сложность - O(N).пространственная сложность - O(1)
+    //Линейный поиск - Временная сложность - O(N).пространственная сложность - O(1)
+    //редко используется из-за своей неэффективности
+    //Линейный поиск можно использовать для малого, несортированного набора данных, который не увеличивается в размерах.
+    public static int linearSearch(int array[], int elementToSearch) {
         for (int i = 0; i <array.length; i++) {
             if(array[i] == elementToSearch) {
                 return i;
@@ -44,6 +46,8 @@ public class SearchAlgorithms {
     }
 
     //Двоичный поиск - Итеративный подход - O(log (N))
+    //часто используется из-за быстрого времени поиска.
+    //важно иметь отсортированную коллекцию при использовании двоичного поиска.
     public static int binarySearch(int arr[], int elementToSearch) {
 
         int firstIndex = 0;
@@ -73,6 +77,7 @@ public class SearchAlgorithms {
 
     //Двоичный поиск - Рекурсивный подход.
     // Временная сложность - O(log (N)).Пространственная сложность - O(1).В худшем случае - O(log (N)).
+    //Двоичный поиск реализован в методе Arrays.binarySearch Java API.
     public static int recursiveBinarySearch(int arr[], int firstElement, int lastElement, int elementToSearch) {
 
         // условие прекращения
@@ -96,9 +101,8 @@ public class SearchAlgorithms {
     }
 
     //Алгоритм Кнута – Морриса – Пратта
-    //Алгоритм КМП осуществляет поиск текста по заданному шаблону. Он разработан Дональдом Кнутом, Воном Праттом и Джеймсом Моррисом: отсюда и название.
+    //Алгоритм КМП осуществляет поиск текста по заданному шаблону.
     //Временная сложность - O (M + N) – общее время алгоритма.Пространственная сложность - O(M).
-
     public static List<Integer> performKMPSearch(String text, String pattern) {
         int[] compliedPatternArray = compilePatternArray(pattern);
 
@@ -151,8 +155,9 @@ public class SearchAlgorithms {
         System.out.println("Compiled Pattern Array " + Arrays.toString(compliedPatternArray));
         return compliedPatternArray;
     }
+
     //Поиск прыжками
-    //От двоичного поиска этот алгоритм отличает движение исключительно вперёд. Имейте в виду, что такой поиск требует отсортированной коллекции.
+    //От двоичного поиска этот алгоритм отличает движение исключительно вперёд. Имейте в виду, что такой поиск требует отсортированной коллекции.Этот поиск используется поверх бинарного поиска, когда прыжки в обратную сторону затратны.
     //Мы прыгаем вперёд на интервал sqrt(arraylength), пока не достигнем элемента большего, чем текущий элемент или конца массива. При каждом прыжке записывается предыдущий шаг.
     //Прыжки прекращаются, когда найден элемент больше искомого. Затем запускаем линейный поиск между предыдущим и текущим шагами.
     //Это уменьшает поле поиска и делает линейный поиск жизнеспособным вариантом.
@@ -176,6 +181,33 @@ public class SearchAlgorithms {
 
         if (integers[previousStep] == elementToSearch)
             return previousStep;
+        return -1;
+    }
+
+    //Интерполяционный поиск
+    //Интерполяционный поиск используется для поиска элементов в отсортированном массиве. Он полезен для равномерно распределенных в структуре данных.
+    //Эффективнее применять эту формулу для больших массивов. В противном случае алгоритм работает как линейный поиск.
+    public static int interpolationSearch(int[] integers, int elementToSearch) {
+
+        int startIndex = 0;
+        int lastIndex = (integers.length - 1);
+
+        while ((startIndex <= lastIndex) && (elementToSearch >= integers[startIndex]) &&
+                (elementToSearch <= integers[lastIndex])) {
+            // используем формулу интерполяции для поиска возможной лучшей позиции для существующего элемента
+            int pos = startIndex + (((lastIndex-startIndex) /
+                    (integers[lastIndex]-integers[startIndex]))*
+                    (elementToSearch - integers[startIndex]));
+
+            if (integers[pos] == elementToSearch)
+                return pos;
+
+            if (integers[pos] < elementToSearch)
+                startIndex = pos + 1;
+
+            else
+                lastIndex = pos - 1;
+        }
         return -1;
     }
 }
