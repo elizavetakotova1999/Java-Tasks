@@ -12,7 +12,18 @@ public class LongestCommonPrefix {
     //Нужно найти самый длинный общий префикс в элементах массива
     public String longestCommonPrefix(String[] strs) {
 
-        if (strs.length == 0) return "";
+        if(strs.length == 0) return "";
+
+        String prefix = strs[0];//изначально префикс равен первой строке
+        for(int i=1; i<strs.length; i++){//начиная со второй строки
+            while(strs[i].indexOf(prefix)!=0){// пока искомый префикс не равен нулю сравниваем префикс с остальными строками
+                prefix = prefix.substring(0, prefix.length()-1);//присваивая префиксу полученную подстроку()
+            }
+        }
+        return prefix;
+    
+
+        /*if (strs.length == 0) return "";
         int find_length = strs[0].length();//искомая длина префикса изначально равна длине первого слова.
         // Все строки будем сравнивать с первым сокращая длину до того пока не найдем общий префикс.
         for (int i = 0; i < strs.length; i++) {
@@ -26,7 +37,7 @@ public class LongestCommonPrefix {
                 }
             }
         }
-        return strs[0].substring(0, find_length);
+        return strs[0].substring(0, find_length);*/
     }
 
 }
