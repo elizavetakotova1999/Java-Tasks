@@ -15,7 +15,7 @@ public class LongestCommonPrefix {
 
         String prefix = strs[0];//изначально префикс равен первой строке
         for(int i=1; i<strs.length; i++){//начиная со второй строки
-            while(strs[i].indexOf(prefix)!=0){// пока искомый префикс не равен нулю сравниваем префикс с остальными строками
+            while(strs[i].indexOf(prefix)!=0){// пока префикс не равен нулю сравниваем префикс с остальными строками
                 prefix = prefix.substring(0, prefix.length()-1);//присваивая префиксу полученную подстроку()
             }
         }
