@@ -3,9 +3,9 @@ package LeetCode;
 public class LongestCommonPrefix {
     public static void main(String[] args) {
         LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
-        String[] strings = new String[]{"flower",
-                                        "flow",
-                                        "flight"};
+        String[] strings = new String[]{"flyyyyower",
+                                        "flyyyyow",
+                                        "flyyyyyight"};
 
         System.out.println(longestCommonPrefix.longestCommonPrefix(strings));
 
@@ -14,7 +14,7 @@ public class LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {
 
         if (strs.length == 0) return "";
-        int find_length = strs[0].length();//искомая длина изначально равна длине первого слова.
+        int find_length = strs[0].length();//искомая длина префикса изначально равна длине первого слова.
         // Все строки будем сравнивать с первым сокращая длину до того пока не найдем общий префикс.
         for (int i = 0; i <strs.length ; i++) {
             find_length = Math.min(find_length, strs[i].length());//записываем найменшее значение длины двух строк
