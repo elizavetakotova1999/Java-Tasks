@@ -1,5 +1,5 @@
 package LeetCode;
-
+//Нужно найти самый длинный общий префикс в элементах массива
 public class LongestCommonPrefix {
     public static void main(String[] args) {
         LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
@@ -9,9 +9,8 @@ public class LongestCommonPrefix {
 
     }
 
-    //Нужно найти самый длинный общий префикс в элементах массива
     public String longestCommonPrefix(String[] strs) {
-
+        //Вариант решения 2.
         if(strs.length == 0) return "";
 
         String prefix = strs[0];//изначально префикс равен первой строке
@@ -23,7 +22,9 @@ public class LongestCommonPrefix {
         return prefix;
     
 
-        /*if (strs.length == 0) return "";
+        /*
+        //Вариант решения 1.
+        if (strs.length == 0) return "";
         int find_length = strs[0].length();//искомая длина префикса изначально равна длине первого слова.
         // Все строки будем сравнивать с первым сокращая длину до того пока не найдем общий префикс.
         for (int i = 0; i < strs.length; i++) {
