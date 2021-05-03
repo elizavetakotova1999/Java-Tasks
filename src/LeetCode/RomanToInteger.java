@@ -21,7 +21,7 @@ public class RomanToInteger {
         Если дана римская цифра, преобразуйте ее в целое число.*/
 
     public int romanToInt(String s) {
-        int array[] = new int[s.length()];
+        int[] array = new int[s.length()];
         int number = 0;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i)=='I') array[i] = 1;
