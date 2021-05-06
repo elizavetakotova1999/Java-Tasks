@@ -6,7 +6,6 @@ public class LongestCommonPrefix {
         String[] strings = new String[]{"flyyyyower", "flyyyyow", "flyyyyyight"};
 
         System.out.println(longestCommonPrefix.longestCommonPrefix(strings));
-
     }
 
     public String longestCommonPrefix(String[] strs) {

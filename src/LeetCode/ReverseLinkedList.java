@@ -1,21 +1,20 @@
 package LeetCode;
 
-
-import java.util.LinkedList;
-import java.util.List;
-
 public class ReverseLinkedList {
     public static void main(String[] args) {
-        List<Integer> list = new LinkedList<>();
-        for (int i = 0; i < 10; i++) {
-            list.add(i);
-        }
 
     }
     class Solution {
         public ListNode reverseList(ListNode head) {
-
-            return head;
+        ListNode current = head;
+        ListNode previous = null;
+        while (current!=null){
+            ListNode tmp = current.next;
+            current.next = previous;
+            previous = current;
+            current=tmp;
+        }
+        return previous;
         }
     }
 }
