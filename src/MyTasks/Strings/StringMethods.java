@@ -1,4 +1,4 @@
-package MyTasks;
+package MyTasks.Strings;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Formatter;
