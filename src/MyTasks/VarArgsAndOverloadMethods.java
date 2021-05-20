@@ -10,7 +10,8 @@ public class VarArgsAndOverloadMethods {
     }
 
     public static void printArgCount(int... args) {//3
-        System.out.print("int args: " + args.length);
+        System.out.print("int args: "
+                + args.length);
     }
 
     public static void main(String[] args) {
