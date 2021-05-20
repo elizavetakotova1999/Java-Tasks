@@ -18,9 +18,17 @@ public class Runner {
         System.out.println(ob3.getValue());
         ob3.setValue("Java SE 6");
         System.out.println(ob3.toString());/* выводится
-тип объекта, а не тип параметризации */
+        тип объекта, а не тип параметризации */
         ob3.setValue(71);
         System.out.println(ob3.toString());
         ob3.setValue(null);
+// Mark<String> ms = new Mark<String>(“7”); //ошибка компиляции
+        System.out.println("-------------------------------------------");
+        Mark<Double> md = new Mark<Double>(71.4D);//71.5d
+        System.out.println(md.sameAny(md));
+        Mark<Integer> mi = new Mark<Integer>(71);
+        System.out.println(md.sameAny(mi));
+// md.same(mi); //ошибка компиляции
+        System.out.println(md.roundMark());
     }
 }
