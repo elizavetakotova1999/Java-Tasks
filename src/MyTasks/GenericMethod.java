@@ -1,6 +1,6 @@
 package MyTasks;
 
-public class GenericMethod {
+public class GenericMethod {// параметризованный метод
     public static <T extends Number> byte asByte(T num) {
         long n = num.longValue();
         if (n >= -128 && n <= 127) return (byte) n;
