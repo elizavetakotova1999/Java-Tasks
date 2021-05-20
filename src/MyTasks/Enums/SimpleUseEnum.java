@@ -14,7 +14,7 @@ public class SimpleUseEnum {
             case MMF:
                 System.out.print(current);
                 break;
-// case LAW : System.out.print(current);//ошибка компиляции!
+    // case LAW : System.out.print(current);//ошибка компиляции!
             default:
                 System.out.print("вне case: " + current);
         }
