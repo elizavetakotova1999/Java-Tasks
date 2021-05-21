@@ -1,5 +1,5 @@
 package MyTasks.OverridingHashCodeEqualsToString;
-
+ //переопределение методов equals(), hashCode, toString()
 public class Student {
     private int id;
     private String name;
