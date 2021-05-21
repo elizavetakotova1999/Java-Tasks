@@ -1,10 +1,8 @@
 package MyTasks.CloneObj;
 
-import MyTasks.ParameterizedType.Mark;
-
 import java.util.ArrayList;
 
-public class DeepCloneStudent implements Cloneable {
+public class DeepCloneStudent<Mark> implements Cloneable {
     private int id = 71;
     private ArrayList<Mark> lm = new ArrayList<Mark>();
     public int getId() {
