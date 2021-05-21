@@ -15,3 +15,8 @@ public class DemoSimpleClone {
         System.out.println("id = " + ob.getId());
     }
 }
+/* Если закомментировать вызов метода clone(),
+    то выведено будет следующее:
+    id = 71
+    ->id = 1000
+    id = 1000*/
