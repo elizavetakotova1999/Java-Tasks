@@ -1,6 +1,6 @@
 package MyTasks.OverridingHashCodeEqualsToString;
 
-public class StudentEq {
+public class StudentEq {// демонстрация работы метода equals() при наследовании
     public static void main(String[] args) {
         Student p1 = new Student(71, "Петров", 19);
         Student p2 = new Student(71, "Петров", 19);
