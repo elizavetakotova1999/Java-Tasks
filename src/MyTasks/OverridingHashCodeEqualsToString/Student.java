@@ -28,7 +28,9 @@ public class Student {
             return true;
         if (obj == null)
             return false;
-        if (obj instanceof Student) { //warning
+        if (obj instanceof Student) {
+            // вместо вышеуказанной проверки - проверка на соответствие типов сравниваемых объектов с использованием объекта класса Class
+            //if (getClass() == obj.getClass())
             Student temp = (Student) obj;
             return this.id == temp.id &&
                     name.equals(temp.name) &&
